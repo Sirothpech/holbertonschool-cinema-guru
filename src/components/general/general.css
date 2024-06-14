@@ -1,0 +1,81 @@
+/* src/components/general/general.css */
+
+/* ---------Input--------- */
+
+.input-container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+  }
+  
+  .input-label {
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+  }
+  
+  .input-field {
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+  }
+  
+  .input-icon {
+	margin-right: 0.5rem;
+  }
+
+/* Container for the select input */
+.select-input-container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+  }
+  
+  /* Label for the select input */
+  .select-input-label {
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+  }
+  
+  /* The select input field */
+  .select-input-field {
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
+	transition: border-color 0.2s;
+  }
+  
+  .select-input-field:focus {
+	border-color: #007bff;
+  }
+  
+  /* Custom select styles if needed */
+  .custom-select {
+	background-color: #f8f9fa;
+	border-color: #6c757d;
+  }
+
+/* Container for the search bar */
+.search-bar-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+  }
+  
+  /* The search bar input field */
+  .search-bar-input {
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	max-width: 400px;
+	outline: none;
+	transition: border-color 0.2s;
+  }
+  
+  .search-bar-input:focus {
+	border-color: #007bff;
+  }
