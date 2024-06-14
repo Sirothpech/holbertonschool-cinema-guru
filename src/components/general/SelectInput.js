@@ -1,42 +1,46 @@
-// src/components/general/SelectInput.js
+import './general.css';
 import React from 'react';
 import PropTypes from 'prop-types';
-import './general.css';
 
-const SelectInput = ({ label, options, className, value, setValue }) => {
-  const handleSelect = (event) => {
-    setValue(event.target.value);
-  };
+export default function SelectInput(props) {
+    const {
+        label,
+        options,
+        Multiple,
+        className,
+        value,
+        setValue
+    } = props;
 
-  return (
-    <div className={`select-input-container ${className}`}>
-      {label && <label className="select-input-label">{label}</label>}
-      <select className="select-input-field" value={value} onChange={handleSelect}>
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
+    function handleSelect(e) {
+        setValue(e.target.value);
+    }
 
-SelectInput.propTypes = {
-  label: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  className: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  setValue: PropTypes.func.isRequired,
-};
+    return (
+        <div className={className}>
+            <label>{label}</label>
+            <select multiple={Multiple} value={value} onChange={handleSelect}>
+                {options.map((opt, index) =>
+                <option key={index} value={opt.value}>{opt.text}</option>
+                )}
+            </select>
+        </div>
+    );
+}
+
+SelectInput.porpTypes = {
+    label: PropTypes.string,
+    options: PropTypes.array,
+    Multiple: PropTypes.bool,
+    className: PropTypes.string,
+    value: PropTypes.any.isRequired,
+    setValue: PropTypes.func
+}
 
 SelectInput.defaultProps = {
-  className: '',
-};
-
-export default SelectInput;
+    label: "",
+    options: [],
+    Multiple: false,
+    className: "",
+    setValue: () => {}
+}

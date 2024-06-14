@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Dashboard from './routes/Dashboard';
+import Dashboard from './routes/dashboard/Dashboard';
 import Authentication from './routes/auth/Authentication';
 import axios from 'axios';
 
